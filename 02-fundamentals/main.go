@@ -95,6 +95,41 @@ func logicOperators(job1, job2 bool) (bool, bool, bool) {
 	return buyIphone, buyTv, buyIcecream
 }
 
+func unaryOperators() {
+	x := 1
+	y := 2
+	fmt.Println("x:", x)
+	fmt.Println("y:", y)
+
+	x++
+	fmt.Println("x++", x)
+
+	x--
+	fmt.Println("x--", x)
+}
+
+func notTernaryTest(value float64) string {
+	if value > 6 {
+		return "approved"
+	}
+
+	return "try again :)"
+}
+
+func pointers() {
+	ivar := 1
+
+	var pointer *int = nil // create nil pointer (memory address with empty value)
+
+	pointer = &ivar // get p memory address
+	*pointer++      // remover reference (getting value)
+	ivar++
+
+	// pointer++ not permitted ioerations over pointers
+
+	fmt.Println(pointer, *pointer, ivar, &ivar)
+}
+
 func main() {
 	result := sum(1, 5)
 	print(result)
@@ -105,4 +140,11 @@ func main() {
 
 	buyIphone, buyTv, buyIcecream := logicOperators(true, true)
 	fmt.Printf("buyIphone: %t, buyTv: %t, buyIcecream: %t, healty: %t", buyIphone, buyTv, buyIcecream, !buyIcecream)
+
+	unaryOperators()
+
+	fmt.Println(notTernaryTest(3))
+	fmt.Println(notTernaryTest(9))
+
+	pointers()
 }
