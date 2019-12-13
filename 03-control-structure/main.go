@@ -49,6 +49,30 @@ func loops() {
 	}
 }
 
+func switching(number interface{}) string {
+	switch number.(type) {
+	// do something about type
+	}
+
+	switch number {
+
+	case 10:
+		fallthrough
+
+	case 9:
+		return "TOP"
+
+	case 8, 7:
+		return "humm, ok"
+
+	case 6, 5, 4, 3:
+		return "bad guy"
+
+	default:
+		return "OMG, what?"
+	}
+}
+
 func main() {
 	// printResult(7.3)
 	// printResult(6.3)
@@ -56,5 +80,11 @@ func main() {
 
 	// testRandom()
 
-	loops()
+	// loops()
+
+	fmt.Println(switching(10))
+	fmt.Println(switching(9))
+	fmt.Println(switching(7))
+	fmt.Println(switching(4))
+	fmt.Println(switching(0))
 }
