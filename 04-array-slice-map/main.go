@@ -66,9 +66,35 @@ func sliceMake() {
 	fmt.Println(slice, len(slice), cap(slice)) // when you add more than capacity, slice size is duplicated
 }
 
+func internalArraySlice() {
+	slice1 := make([]int, 10, 20)
+	slice2 := append(slice1, 1, 2, 3)
+
+	fmt.Println(slice1, slice2)
+
+	slice1[0] = 999
+	fmt.Println(slice1, slice2)
+
+}
+
+func copySlice() {
+	array1 := [3]int{1, 2, 3}
+	var slice1 []int
+
+	// array = append(array1, 4,5,6)
+	slice1 = append(slice1, 4, 5, 6)
+	fmt.Println(array1, slice1)
+
+	slice2 := make([]int, 2)
+	copy(slice2, slice1)
+	fmt.Println(slice2)
+}
+
 func main() {
 	// array()
 	// forRange()
 	// slice()
-	sliceMake()
+	// sliceMake()
+	// internalArraySlice()
+	copySlice()
 }
