@@ -22,11 +22,10 @@ func printApproved(approved ...string) {
 }
 
 func main() {
+	fmt.Println("Média %.2f", media(7.7, 8.1, 10.0))
+	fmt.Println("Média %.2f", media(7.0, 3.0))
 
 	list := []string{"Maria", "Pedro", "Ivonei", "Valentina", "Arianne"}
 
 	printApproved(list...)
-
-	// fmt.Println("Média %.2f", media(7.7, 8.1, 10.0))
-	// fmt.Println("Média %.2f", media(7.0, 3.0))
 }
