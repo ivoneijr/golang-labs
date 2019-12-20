@@ -90,11 +90,69 @@ func copySlice() {
 	fmt.Println(slice2)
 }
 
+func map1() {
+	// var approved map[int]string
+	approved := make(map[int]string)
+
+	approved[7263178637] = "Ivo"
+	approved[4736874361] = "Nei"
+	approved[6464672997] = "Jr"
+
+	fmt.Println(approved)
+
+	for cpf, nome := range approved {
+		fmt.Printf("%s (CPF: %d\n", nome, cpf)
+	}
+
+	fmt.Println(approved[6464672997])
+	delete(approved, 6464672997)
+	fmt.Println(approved[6464672997])
+}
+
+func map2() {
+	payments := map[string]float64{
+		"José":  23444.12,
+		"Maria": 55444.12,
+		"Ivo":   123423444.12,
+	}
+
+	payments["Someone add"] = 1332.10
+	delete(payments, "notExists")
+
+	for name, payment := range payments {
+		fmt.Println(name, payment)
+	}
+}
+
+func map3() {
+	byLetter := map[string]map[string]float64{
+		"G": {
+			"Gabriela Silva": 14444.21,
+			"Guga Pereira":   33343.34,
+		},
+		"J": {
+			"José João": 2344.43,
+		},
+		"P": {
+			"Pedro Paulo": 1200.00,
+		},
+	}
+
+	delete(byLetter, "P")
+
+	for letter, funcs := range byLetter {
+		fmt.Println(letter, funcs)
+	}
+}
+
 func main() {
 	// array()
 	// forRange()
 	// slice()
 	// sliceMake()
 	// internalArraySlice()
-	copySlice()
+	// copySlice()
+	// map1()
+	// map2()
+	map3()
 }
